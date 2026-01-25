@@ -19,7 +19,10 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.hry223 = import ./home-manager/home.nix;
+            
+	home-manager.users.hry223 = {
+  			imports = [ ./home-manager/home.nix ];
+		};
           }
         ];
       };
