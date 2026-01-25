@@ -5,6 +5,7 @@
     ./hardware-configuration.nix
     ../../modules/desktop/kde.nix
     ../../modules/hardware/nvidia.nix
+    ../../modules/system/fonts.nix  # <-- AJOUTE CETTE LIGNE
   ];
 
   boot.loader.systemd-boot.enable = true;
