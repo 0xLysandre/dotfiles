@@ -59,7 +59,7 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-    neovim wget git gimp home-manager fastfetch lshw brave steam libgcc localsend zig gcc gnumake binutils prismlauncher tree
+    neovim wget git gimp home-manager fastfetch lshw brave steam libgcc localsend zig gcc gnumake binutils prismlauncher tree obsidian
   ];
 
   hardware.graphics = {

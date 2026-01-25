@@ -2,6 +2,8 @@
 
 {
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    # Nouvelle syntaxe simplifiée pour les versions récentes
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.symbols-only
   ];
 }
