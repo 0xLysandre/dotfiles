@@ -13,18 +13,20 @@
     nixosConfigurations = {
       desktop-nvidia = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = [
-          ./hosts/desktop-nvidia/configuration.nix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            
-	home-manager.users.hry223 = {
-  			imports = [ ./home-manager/home.nix ];
-		};
-          }
-        ];
+# Change ce bloc :
+modules = [
+  ./hosts/desktop-nvidia/configuration.nix
+  home-manager.nixosModules.home-manager
+  {
+    home-manager.useGlobalPkgs = true;
+    home-manager.useUserPackages = true;
+    # ICI IL Y AVAIT UNE ACCOLADE EN TROP
+    home-manager.users.hry223 = {
+      imports = [ ./home-manager/home.nix ];
+    };
+  } # CETTE ACCOLADE FERME LE BLOC DE CONFIGURATION
+];	
+
       };
       laptop-intel = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
