@@ -57,10 +57,14 @@
   
   virtualisation.virtualbox.host.enable = true;
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.permittedInsecurePackages = [ "electron-25.9.0" ];
 
   environment.systemPackages = with pkgs; [
-    neovim wget git gimp home-manager fastfetch lshw brave steam libgcc localsend zig gcc gnumake binutils prismlauncher tree obsidian
+    neovim wget git gimp home-manager fastfetch lshw brave steam libgcc localsend zig gcc gnumake binutils prismlauncher tree krita tor-browser libreoffice net-tools wirelesstools iw pciutils vlc obs-studio vscode signal-cli firefox unrar hashcat python312 gparted nodejs_20 python312Packages.pillow python312Packages.groq heroic logseq audacity element-desktop
   ];
+
+	networking.firewall.allowedTCPPorts = [ 53317 ]; # Port par défaut de LocalSend
+	networking.firewall.allowedUDPPorts = [ 53317 ];
 
   hardware.graphics = {
     enable = true;    
